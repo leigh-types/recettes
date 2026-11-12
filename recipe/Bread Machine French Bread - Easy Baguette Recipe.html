@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en-US" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bread Machine French Bread - Easy Baguette Recipe - Cook</title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/apple-touch-icon.png">
+    <link rel="manifest" href="../static/site.webmanifest">
+    
+    <link href="../static/css/output.css" rel="stylesheet">
+    <script>
+        // Check for saved theme preference, or check for prefers-color-scheme, or default to light
+        const theme = localStorage.getItem('theme')
+            || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script>
+    <style>
+        .viewport {
+            width: 100%;
+            max-width: 72rem;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Search result keyboard selection. --surface-sunk alone is barely
+           visible against --surface in dark mode, so the accent bar carries
+           the signal. */
+        #search-results a.search-selected {
+            background: var(--accent-soft);
+            box-shadow: inset 3px 0 0 var(--accent);
+        }
+
+        @media print {
+            /* Token values are reset to light in input.css; this resets the
+               browser's own defaults so unstyled text is dark too. */
+            html.dark, html {
+                color-scheme: light !important;
+            }
+
+            * {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                margin: 0;
+                padding: 0;
+            }
+
+            .viewport {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide navigation and non-essential elements */
+            nav, #search-container, #search-input, #search-results, .print\:hidden, .breadcrumb {
+                display: none !important;
+            }
+
+            /* Hide all navigation links */
+            a[href="../"] {
+                display: none !important;
+            }
+
+            /* Recipe layout for print: one column */
+            .grid {
+                display: block !important;
+            }
+
+            .md\:col-span-1, .md\:col-span-2 {
+                page-break-inside: avoid;
+                width: 100% !important;
+            }
+
+            /* Square corners on paper */
+            .card, .step-box, .ingredient-row, .recipe-note, .rounded-xl {
+                border-radius: 0 !important;
+            }
+
+            /* Step numbers */
+            .step-number {
+                background: #000 !important;
+                color: #fff !important;
+            }
+
+            /* Images */
+            img {
+                max-height: 300px !important;
+                max-width: 100% !important;
+                height: auto !important;
+                object-fit: contain !important;
+                page-break-inside: avoid;
+                page-break-after: avoid;
+            }
+
+            /* Recipe sections on same page if possible */
+            h2, h3 {
+                page-break-after: avoid;
+            }
+
+            ol, ul {
+                page-break-inside: avoid;
+            }
+
+            /* Compact spacing */
+            .mb-8, .mb-6, .mb-4 {
+                margin-bottom: 0.5rem !important;
+            }
+
+            .p-6 {
+                padding: 0.5rem !important;
+            }
+
+            /* Recipe header */
+            h1 {
+                color: #000 !important;
+                font-size: 1.5rem !important;
+                margin-bottom: 0 !important;
+            }
+
+            /* Shopping list print styles */
+            .lg\:w-2\/5, .xl\:w-1\/3 {
+                display: none !important;
+            }
+
+            #shopping-list-results {
+                font-size: 11pt !important;
+                line-height: 1.2 !important;
+            }
+
+            #shopping-list-results input[type="checkbox"] {
+                display: none !important;
+            }
+
+            #shopping-list-results li .flex-1 {
+                width: auto !important;
+                flex: 1 1 0% !important;
+            }
+
+            #shopping-list-results label {
+                cursor: default !important;
+            }
+
+            #shopping-list-results h2 {
+                font-size: 11pt !important;
+                color: #000 !important;
+                margin-bottom: 0 !important;
+            }
+
+            #shopping-list-results .space-y-2 > * + *,
+            #shopping-list-results ul > * + * {
+                margin-top: 0 !important;
+            }
+
+            #shopping-list-results li {
+                padding: 0 !important;
+                line-height: 1.3 !important;
+                border-bottom: 1px dotted #ccc;
+            }
+
+            #shopping-list-results .card {
+                margin-bottom: 0.15rem !important;
+                padding: 0 !important;
+                border: none !important;
+            }
+
+            /* Menu print styles */
+            #menu-content {
+                font-size: 10pt !important;
+                line-height: 1.4 !important;
+            }
+
+            #menu-content h1 {
+                font-size: 14pt !important;
+                margin-bottom: 0.25rem !important;
+                color: #000 !important;
+            }
+
+            #menu-content .space-y-6 > * + * {
+                margin-top: 0.3rem !important;
+            }
+
+            #menu-content .menu-section {
+                border: 1px solid #ccc !important;
+                border-radius: 0 !important;
+                page-break-inside: avoid;
+            }
+
+            #menu-content .menu-section-header {
+                background: #eee !important;
+                color: #000 !important;
+                padding: 0.15rem 0.5rem !important;
+            }
+
+            #menu-content .menu-section-header h2 {
+                font-size: 11pt !important;
+                color: #000 !important;
+            }
+
+            #menu-content .menu-section-body {
+                padding: 0.25rem 0.5rem !important;
+            }
+
+            #menu-content .menu-section-body .space-y-2 > * + *,
+            #menu-content .menu-section-body > * + * {
+                margin-top: 0.05rem !important;
+            }
+
+            #menu-content .menu-section-body h3 {
+                font-size: 10pt !important;
+                margin-top: 0.2rem !important;
+                margin-bottom: 0 !important;
+            }
+
+            #menu-content .menu-section-body .pl-6 {
+                padding-left: 1rem !important;
+            }
+
+            /* Preserve word spacing in flex lines */
+            #menu-content .menu-section-body .flex {
+                gap: 0.25em !important;
+            }
+
+            #menu-content .ingredient-badge {
+                font-weight: bold !important;
+                color: #000 !important;
+            }
+
+            #menu-content a {
+                color: #000 !important;
+                text-decoration: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-bg text-text">
+    <div class="viewport">
+        <nav class="nav-card relative">
+            <div class="px-3 lg:px-6 py-4 relative">
+                <div class="flex items-center justify-between flex-wrap gap-y-3">
+                    <a href="../index.html" class="order-1 hidden md:flex items-center space-x-2">
+                        <img src="../static/android-chrome-192x192.png" alt="Cook" class="brand-mark h-8 w-8 rounded-md" width="32" height="32">
+                    </a>
+
+                    <div class="relative z-50 order-2 flex-1 md:ml-2 md:mr-4" id="search-container">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-faint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <input type="text"
+                               id="search-input"
+                               placeholder="Search recipes..."
+                               class="search-input">
+                        <div id="search-results"
+                             class="absolute top-full mt-2 w-full card shadow-[var(--shadow-overlay)] hidden max-h-96 overflow-y-auto"
+                             style="z-index: 9999;">
+                        </div>
+                    </div>
+
+                    <div class="order-3 w-full md:w-auto flex items-center gap-1 lg:gap-2">
+                        
+                        <div class="hidden md:flex items-center gap-1 mr-2 lg:mr-4">
+                            <a href="../index.html"
+                               class="nav-pill active">
+                                Recipes
+                            </a>
+                            
+                            
+                        </div>
+                        
+                        <!-- Inline buttons on md+ screens -->
+                        
+                        <button onclick="showShortcutsHelp()" class="icon-btn hidden md:inline-flex ml-2 print:hidden" aria-label="Keyboard shortcuts" title="Keyboard shortcuts (?)">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                        <button onclick="toggleTheme()" class="icon-btn hidden md:inline-flex ml-2 print:hidden" aria-label="Toggle theme">
+                            <svg class="hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                            </svg>
+                            <svg class="block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                        </button>
+                        <!-- Overflow menu for small screens -->
+                        <div class="relative md:hidden ml-auto" id="more-menu-container">
+                            <button onclick="document.getElementById('more-dropdown').classList.toggle('hidden')" class="icon-btn" aria-label="More options">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+                                </svg>
+                            </button>
+                            <div id="more-dropdown" class="hidden absolute right-0 mt-2 w-56 card shadow-[var(--shadow-overlay)] z-50 py-1">
+                                
+                                <a href="../index.html" class="menu-item active">
+                                    <span>🍳</span> <span>Recipes</span>
+                                </a>
+                                
+                                
+                                <div class="border-t border-line my-1"></div>
+                                
+                                
+                                <button onclick="showShortcutsHelp(); document.getElementById('more-dropdown').classList.add('hidden');" class="menu-item">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span>Keyboard Shortcuts</span>
+                                </button>
+                                <button onclick="toggleTheme(); document.getElementById('more-dropdown').classList.add('hidden');" class="menu-item">
+                                    <svg class="w-4 h-4 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                                    <svg class="w-4 h-4 block dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                                    <span>Toggle Theme</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","author":{"@type":"Person","name":"Bread Dad"},"cookTime":"PT20M","description":"This bread machine french bread recipe is very easy to make. It only uses a few simple ingredients such as flour, water, salt and yeast. Moreover, this french bread tastes great and you can mold it into a beautiful baguette shape. Your family will be amazed by baking skills... while you smirk because you made it with the help of a bread machine! Visit BreadDad.com for more great bread machine recipes.","image":"https://breaddad.com/wp-content/uploads/2020/03/bread-machine-french-bread-9.jpg","name":"Bread Machine French Bread - Easy Baguette Recipe","prepTime":"PT2H40M","recipeCategory":"Appetizer, Dinner, Lunch, Sandwich","recipeCuisine":"American, European","recipeIngredient":["420 g bread flour","7.2 g bread machine yeast","2 tbsp olive oil","6 g salt","307 ml water"],"recipeInstructions":[{"@type":"HowToStep","text":"Unplug the bread machine and then remove the bread pan."},{"@type":"HowToStep","text":"Place water and then the rest of the ingredients into the bread pan. You can make a little indent on top of the bread flour in order to avoid the bread machine yeast falling into the water (until the machine starts). Do not combine the salt with the bread machine yeast (as the salt can kill the bread machine yeast). Place the bread machine yeast and salt in separate parts of the bread pan."},{"@type":"HowToStep","text":"Place the bread pan back into the bread machine and then plug in the bread machine."},{"@type":"HowToStep","text":"Put your machine on the \"Dough\" setting and press the start button. In our bread machine, the kneading and rising on the dough setting takes about 90 minutes."},{"@type":"HowToStep","text":"When your bread machine has finished, unplug the machine and pour the dough onto a cutting board. Wear oven mitts (as the bread pan/bread machine may be hot). Sprinkle some bread flour on the cutting board (before you pour the dough) in order to avoid the dough sticking to the cutting board."},{"@type":"HowToStep","text":"Divide the dough into 4 equal parts if you want to make 4 skinny baguettes (roughly 12 inches long). Or divide the dough into 2 equal parts in order to make 2 thicker french bread \"rolls\". FYI - I usually make 2 thicker and longer loaves with this recipe."},{"@type":"HowToStep","text":"Roll the divided dough with your hands into your preferred shape (i.e. baguette or thicker bread roll). See our tips below on shaping the bread dough (especially about making the dough roll about 1/2 the width of your desired end product... as the dough expands as the bread machine yeast rises)."},{"@type":"HowToStep","text":"Place the shaped dough onto a nonstick baking sheet."},{"@type":"HowToStep","text":"Coat the dough with olive oil. Use a small pastry brush."},{"@type":"HowToStep","text":"Cover the dough and baking sheet with a light kitchen cloth or plastic wrap in order to protect from dust, etc."},{"@type":"HowToStep","text":"Let the dough rise for 45-60 minutes. FYI - This time can vary. The speed of the rise is based in part on the temperature of your kitchen (e.g. rise faster in the summer and slower in the winter). See the \"poke test\" info in the tips section below on how to determine if your dough has risen/proofed to the correct level (and it is not under or over proofed). I like to start my poke testing around 35-40 minutes (as I would rather be too early versus too late)."},{"@type":"HowToStep","text":"During this \"rising\" time, preheat your oven to 450 degrees F."},{"@type":"HowToStep","text":"After the 45-60 minutes, remove the covering from the dough and \"score\" (slice) the top of each dough roll with a sharp knife. Make diagonal slices about 1/2 inch deep and about 3 inches apart. This will help prevent the bread from cracking during baking. See the tips below about how to score bread."},{"@type":"HowToStep","text":"Place the baking sheet in the oven. It should bake at 450 degrees for 15-20 minutes or until golden brown. Wear oven mitts."},{"@type":"HowToStep","text":"At the 8-10 minutes mark, turn the baking sheet around in order to ensure an even \"browning\" of the bread. Wear oven mitts."},{"@type":"HowToStep","text":"Remove the baking sheet when done and place the bread on a cooling rack. Wear oven mitts."}],"recipeYield":"40"}</script>
+<div>
+    <nav class="mb-4 breadcrumb print:hidden">
+        <ol class="flex items-center space-x-2 text-sm text-muted">
+            <li><a href="../index.html" class="hover:text-text">Recipes</a></li>
+            
+            <li class="flex items-center">
+                <span class="mx-2 text-faint">/</span>
+                
+                    <span class="text-text">Bread Machine French Bread - Easy Baguette Recipe</span>
+                
+            </li>
+            
+        </ol>
+    </nav>
+
+    <div class="mb-8">
+        <!-- Recipe image if available -->
+        
+        <div class="mb-6 max-w-4xl mx-auto flex justify-center">
+            <img src="https://breaddad.com/wp-content/uploads/2020/03/bread-machine-french-bread-9.jpg" alt="Bread Machine French Bread - Easy Baguette Recipe" class="rounded-xl shadow-[var(--shadow-card)] max-w-full h-auto max-h-[500px]">
+        </div>
+        
+
+        <!-- Title bar with scale and shopping list button -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6 print:flex-row print:items-center">
+            <h1 class="text-display font-bold text-text print:text-2xl">
+                Bread Machine French Bread - Easy Baguette Recipe
+            </h1>
+            
+            <div class="flex flex-wrap items-center gap-2 lg:gap-3 print:hidden">
+                
+                <button id="start-cooking-btn" onclick="startCookingMode()" class="btn btn-primary" title="Start Cooking">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span class="hidden lg:inline">Cook</span>
+                </button>
+                
+                <a href="../recipe/Bread Machine French Bread - Easy Baguette Recipe.cook" download class="btn" title="Download .cook source">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"></path>
+                    </svg>
+                    <span class="hidden lg:inline">.cook</span>
+                </a>
+                
+            </div>
+        </div>
+
+        <!-- Recipe info section -->
+        <div class="space-y-4">
+            <!-- Tags row -->
+            
+
+            
+
+            <!-- Description if present -->
+            
+            <div class="recipe-note">
+                <p class="m-0">This bread machine french bread recipe is very easy to make. It only uses a few simple ingredients such as flour, water, salt and yeast. Moreover, this french bread tastes great and you can mold it into a beautiful baguette shape. Your family will be amazed by baking skills... while you smirk because you made it with the help of a bread machine! Visit BreadDad.com for more great bread machine recipes.</p>
+            </div>
+            
+
+            <!-- Metadata row -->
+            <div id="metadata-container" class="flex flex-wrap gap-3">
+                
+                <span class="metadata-pill metadata-servings">👥 40 servings</span>
+                
+
+                
+                
+
+                
+                
+
+                
+                <span class="metadata-pill metadata-course">🍽️ Appetizer, Dinner, Lunch, Sandwich</span>
+                
+
+                
+                <span class="metadata-pill metadata-prep">⏱️ Prep Time: 2 hours 40 minutes</span>
+                
+
+                
+                <span class="metadata-pill metadata-cook">🔥 Cook Time: 20 minutes</span>
+                
+
+                
+                <span class="metadata-pill metadata-cuisine">🌍 American, European</span>
+                
+
+                
+                
+
+                
+                <span class="metadata-pill metadata-author">👤 Bread Dad</span>
+                
+
+                
+                
+                <span class="metadata-pill metadata-source">📖 <a href="https://breaddad.com/bread-machine-french-bread-recipe" class="text-info hover:underline ml-1" target="_blank" rel="noopener noreferrer">breaddad.com</a></span>
+                
+                
+
+                
+                
+
+                <!-- Custom metadata -->
+                
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div id="recipe-body" class="grid md:grid-cols-3 gap-8 mb-8">
+        <div class="md:col-span-1">
+            <div class="card p-6">
+                <h2 class="text-title font-bold mb-4 text-accent-text">🥘 Ingredients</h2>
+                
+                <!-- Fallback to original flat list for recipes without sections -->
+                <ul class="ingredient-list space-y-3">
+                    
+                    <li class="ingredient-row">
+                        <div class="flex-1 flex items-center">
+                            
+                            <span class="font-medium">bread flour</span>
+                            
+                            
+                            
+                        </div>
+                        <span class="row-value ml-2">
+                            420 g
+                            
+                        </span>
+                    </li>
+                    
+                    <li class="ingredient-row">
+                        <div class="flex-1 flex items-center">
+                            
+                            <span class="font-medium">bread machine yeast</span>
+                            
+                            
+                            
+                        </div>
+                        <span class="row-value ml-2">
+                            7.2 g
+                            
+                        </span>
+                    </li>
+                    
+                    <li class="ingredient-row">
+                        <div class="flex-1 flex items-center">
+                            
+                            <span class="font-medium">olive oil</span>
+                            
+                            
+                            
+                        </div>
+                        <span class="row-value ml-2">
+                            2 tbsp
+                            
+                        </span>
+                    </li>
+                    
+                    <li class="ingredient-row">
+                        <div class="flex-1 flex items-center">
+                            
+                            <span class="font-medium">salt</span>
+                            
+                            
+                            
+                        </div>
+                        <span class="row-value ml-2">
+                            6 g
+                            
+                        </span>
+                    </li>
+                    
+                    <li class="ingredient-row">
+                        <div class="flex-1 flex items-center">
+                            
+                            <span class="font-medium">water</span>
+                            
+                            
+                            
+                        </div>
+                        <span class="row-value ml-2">
+                            307 ml
+                            
+                        </span>
+                    </li>
+                    
+                </ul>
+                
+
+                
+                <h2 class="text-title font-bold mt-6 mb-4 text-text">🍳 Cookware</h2>
+                <ul class="cookware-list ingredient-list space-y-2">
+                    
+                    <li class="ingredient-row">
+                        <span class="font-medium">bread machine</span>
+                    </li>
+                    
+                    <li class="ingredient-row">
+                        <span class="font-medium">nonstick baking sheet</span>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+        <div class="md:col-span-2">
+            <div class="card p-6" data-recipe-path="Bread Machine French Bread - Easy Baguette Recipe">
+                
+                
+                
+                <ol class="step-list space-y-4 ">
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">1</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Unplug the 
+                                        <span class="cookware-badge">bread machine</span>
+                                         and then remove the bread pan.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">2</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Place 
+                                        <span class="ingredient-badge">water</span>
+                                         and then the rest of the ingredients into the bread pan. You can make a little indent on top of the 
+                                        <span class="ingredient-badge">bread flour</span>
+                                         in order to avoid the 
+                                        <span class="ingredient-badge">bread machine yeast</span>
+                                         falling into the water (until the machine starts). Do not combine the 
+                                        <span class="ingredient-badge">salt</span>
+                                         with the 
+                                        <span class="ingredient-badge">bread machine yeast</span>
+                                         (as the 
+                                        <span class="ingredient-badge">salt</span>
+                                         can kill the 
+                                        <span class="ingredient-badge">bread machine yeast</span>
+                                        ). Place the 
+                                        <span class="ingredient-badge">bread machine yeast</span>
+                                         and 
+                                        <span class="ingredient-badge">salt</span>
+                                         in separate parts of the bread pan.
+                                    </div>
+                                    
+                                    <div class="step-refs">
+                                        
+                                        <span class="inline-block mr-3">
+                                            water: 307 ml,
+                                        </span>
+                                        
+                                        <span class="inline-block mr-3">
+                                            bread flour: 420 g,
+                                        </span>
+                                        
+                                        <span class="inline-block mr-3">
+                                            bread machine yeast: 7.2 g,
+                                        </span>
+                                        
+                                        <span class="inline-block mr-3">
+                                            salt: 6 g,
+                                        </span>
+                                        
+                                        <span class="inline-block mr-3">
+                                            bread machine yeast,
+                                        </span>
+                                        
+                                        <span class="inline-block mr-3">
+                                            salt,
+                                        </span>
+                                        
+                                        <span class="inline-block mr-3">
+                                            bread machine yeast,
+                                        </span>
+                                        
+                                        <span class="inline-block mr-3">
+                                            bread machine yeast,
+                                        </span>
+                                        
+                                        <span class="inline-block mr-3">
+                                            salt
+                                        </span>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">3</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Place the bread pan back into the bread machine and then plug in the bread machine.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">4</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Put your machine on the &quot;Dough&quot; setting and press the start button. In our bread machine, the kneading and rising on the dough setting takes about 
+                                        <span class="timer-badge" data-timer data-timer-key="0-4-1" data-seconds="5400" data-display="90 minutes" data-section="" data-step="4" role="button" tabindex="0">⏱️ 90 minutes</span>
+                                        .
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">5</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        When your bread machine has finished, unplug the machine and pour the dough onto a cutting board. Wear oven mitts (as the bread pan/bread machine may be hot). Sprinkle some 
+                                        <span class="ingredient-badge">bread flour</span>
+                                         on the cutting board (before you pour the dough) in order to avoid the dough sticking to the cutting board.
+                                    </div>
+                                    
+                                    <div class="step-refs">
+                                        
+                                        <span class="inline-block mr-3">
+                                            bread flour
+                                        </span>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">6</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Divide the dough into 4 equal parts if you want to make 4 skinny baguettes (roughly 12 inches long). Or divide the dough into 2 equal parts in order to make 2 thicker french bread &quot;rolls&quot;. FYI - I usually make 2 thicker and longer loaves with this recipe.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">7</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Roll the divided dough with your hands into your preferred shape (i.e. baguette or thicker bread roll). See our tips below on shaping the bread dough (especially about making the dough roll about 1/2 the width of your desired end product... as the dough expands as the 
+                                        <span class="ingredient-badge">bread machine yeast</span>
+                                         rises).
+                                    </div>
+                                    
+                                    <div class="step-refs">
+                                        
+                                        <span class="inline-block mr-3">
+                                            bread machine yeast
+                                        </span>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">8</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Place the shaped dough onto a 
+                                        <span class="cookware-badge">nonstick baking sheet</span>
+                                        .
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">9</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Coat the dough with 
+                                        <span class="ingredient-badge">olive oil</span>
+                                        . Use a small pastry brush.
+                                    </div>
+                                    
+                                    <div class="step-refs">
+                                        
+                                        <span class="inline-block mr-3">
+                                            olive oil: 2 tbsp
+                                        </span>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">10</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Cover the dough and baking sheet with a light kitchen cloth or plastic wrap in order to protect from dust, etc.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">11</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Let the dough rise for 
+                                        <span class="timer-badge">⏱️ 45-60 minutes</span>
+                                        . FYI - This time can vary. The speed of the rise is based in part on the temperature of your kitchen (e.g. rise faster in the summer and slower in the winter). See the &quot;poke test&quot; info in the tips section below on how to determine if your dough has risen/proofed to the correct level (and it is not under or over proofed). I like to start my poke testing around 
+                                        <span class="timer-badge">⏱️ 35-40 minutes</span>
+                                         (as I would rather be too early versus too late).
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">12</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        During this &quot;rising&quot; time, preheat your oven to 450 degrees F.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">13</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        After the 
+                                        <span class="timer-badge">⏱️ 45-60 minutes</span>
+                                        , remove the covering from the dough and &quot;score&quot; (slice) the top of each dough roll with a sharp knife. Make diagonal slices about 1/2 inch deep and about 3 inches apart. This will help prevent the bread from cracking during baking. See the tips below about how to score bread.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">14</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Place the baking sheet in the oven. It should bake at 450 degrees for 
+                                        <span class="timer-badge">⏱️ 15-20 minutes</span>
+                                         or until golden brown. Wear oven mitts.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">15</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        At the 
+                                        <span class="timer-badge">⏱️ 8-10 minutes</span>
+                                         mark, turn the baking sheet around in order to ensure an even &quot;browning&quot; of the bread. Wear oven mitts.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="step-box">
+                        <div class="flex flex-col gap-4">
+                            
+                            
+                            <div class="flex gap-4">
+                                <div class="step-number">16</div>
+                                <div class="flex-1">
+                                    <div class="step-body mb-2">
+                                        
+                                        Remove the baking sheet when done and place the bread on a cooling rack. Wear oven mitts.
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                    <li class="recipe-note mb-3">
+                        <span>📝</span>
+                        <p class="m-0" style="white-space: pre-line">Please read the recipe&#x27;s tips section on Bread Dad (BreadDad.com) for extra information on how to make this recipe successfully and to avoid common bread machine problems.</p>
+                    </li>
+                    
+                    
+                </ol>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="cooking-mode-data" type="application/json">
+{"image":"https://breaddad.com/wp-content/uploads/2020/03/bread-machine-french-bread-9.jpg","name":"Bread Machine French Bread - Easy Baguette Recipe","scale":1.0,"sections":[{"ingredients":[{"name":"bread flour","note":null,"quantity":"420","unit":"g"},{"name":"bread flour","note":null,"quantity":null,"unit":null},{"name":"bread machine yeast","note":null,"quantity":"7.2","unit":"g"},{"name":"bread machine yeast","note":null,"quantity":null,"unit":null},{"name":"bread machine yeast","note":null,"quantity":null,"unit":null},{"name":"bread machine yeast","note":null,"quantity":null,"unit":null},{"name":"bread machine yeast","note":null,"quantity":null,"unit":null},{"name":"olive oil","note":null,"quantity":"2","unit":"tbsp"},{"name":"salt","note":null,"quantity":"6","unit":"g"},{"name":"salt","note":null,"quantity":null,"unit":null},{"name":"salt","note":null,"quantity":null,"unit":null},{"name":"water","note":null,"quantity":"307","unit":"ml"}],"name":null,"stepOffset":0,"steps":[{"globalNumber":1,"image":null,"ingredients":[],"number":1,"type":"step"},{"globalNumber":2,"image":null,"ingredients":[{"name":"water","note":null,"quantity":"307","unit":"ml"},{"name":"bread flour","note":null,"quantity":"420","unit":"g"},{"name":"bread machine yeast","note":null,"quantity":"7.2","unit":"g"},{"name":"salt","note":null,"quantity":"6","unit":"g"},{"name":"bread machine yeast","note":null,"quantity":null,"unit":null},{"name":"salt","note":null,"quantity":null,"unit":null},{"name":"bread machine yeast","note":null,"quantity":null,"unit":null},{"name":"bread machine yeast","note":null,"quantity":null,"unit":null},{"name":"salt","note":null,"quantity":null,"unit":null}],"number":2,"type":"step"},{"globalNumber":3,"image":null,"ingredients":[],"number":3,"type":"step"},{"globalNumber":4,"image":null,"ingredients":[],"number":4,"type":"step"},{"globalNumber":5,"image":null,"ingredients":[{"name":"bread flour","note":null,"quantity":null,"unit":null}],"number":5,"type":"step"},{"globalNumber":6,"image":null,"ingredients":[],"number":6,"type":"step"},{"globalNumber":7,"image":null,"ingredients":[{"name":"bread machine yeast","note":null,"quantity":null,"unit":null}],"number":7,"type":"step"},{"globalNumber":8,"image":null,"ingredients":[],"number":8,"type":"step"},{"globalNumber":9,"image":null,"ingredients":[{"name":"olive oil","note":null,"quantity":"2","unit":"tbsp"}],"number":9,"type":"step"},{"globalNumber":10,"image":null,"ingredients":[],"number":10,"type":"step"},{"globalNumber":11,"image":null,"ingredients":[],"number":11,"type":"step"},{"globalNumber":12,"image":null,"ingredients":[],"number":12,"type":"step"},{"globalNumber":13,"image":null,"ingredients":[],"number":13,"type":"step"},{"globalNumber":14,"image":null,"ingredients":[],"number":14,"type":"step"},{"globalNumber":15,"image":null,"ingredients":[],"number":15,"type":"step"},{"globalNumber":16,"image":null,"ingredients":[],"number":16,"type":"step"}]}]}
+</script>
+
+
+
+        </main>
+
+        
+        <footer class="mt-12 mb-6 text-center text-sm text-faint print:hidden">
+            Built with
+            <a href="https://cooklang.org/cli/" class="text-accent-text hover:underline" target="_blank" rel="noopener">CookCLI</a>
+            
+        </footer>
+        
+    </div>
+
+    <script>
+        // Theme toggle function
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', newTheme);
+        }
+    </script>
+
+    
+    <script>window.__PREFIX__ = "..";</script>
+    <script src="../static/js/search.js"></script>
+    
+
+    <!-- URL prefix for JavaScript -->
+    <script>
+        window.__PREFIX__ = "..";
+        window.__STATIC_MODE__ = true;
+        window.__STRINGS__ = { close: "Close" };
+    </script>
+
+    <!-- Keyboard shortcuts -->
+    <script src="../static/js/keyboard-shortcuts.js"></script>
+    <!-- Expose showShortcutsHelp globally for the help button -->
+    <script>
+        // showShortcutsHelp is defined in keyboard-shortcuts.js
+        // This ensures it's available for the onclick handler
+        if (typeof showShortcutsHelp === 'undefined') {
+            window.showShortcutsHelp = function() {
+                console.warn('Keyboard shortcuts not loaded');
+            };
+        }
+    </script>
+
+    
+<link rel="stylesheet" href="../static/css/cooking-mode.css">
+<script src="../static/js/cooking-mode.js"></script>
+<script src="../static/js/timers.js"></script>
+
+</body>
+</html>

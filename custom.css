@@ -9,3 +9,55 @@ h1, h2, h3, h4, h5, h6 {
 li, p, label, input {
   font-family: "Manrope", sans-serif;
 }
+
+.timer-badge {
+font-size: 14px;
+font-weight: 400;
+}
+
+.text-display {
+font-size: 50px;
+}
+
+/* small image to the left of the title */
+.title-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.title-group img {
+  width: 128px !important;
+  height: 128px !important;
+  max-height: none !important;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* buttons: pill look comes from .metadata-pill, this adds the "clickable" cues */
+.pill-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid rgba(226, 96, 45, 0.45);
+  transition: background .15s, border-color .15s, transform .15s, box-shadow .15s;
+}
+
+.pill-action svg {
+  width: 16px;
+  height: 16px;
+  color: #e2602d;
+}
+
+.pill-action:hover {
+  background: rgba(226, 96, 45, 0.15);
+  border-color: #e2602d;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.pill-action-primary {
+  border-color: #e2602d;
+}

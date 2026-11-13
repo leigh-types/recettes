@@ -41,23 +41,54 @@ font-size: 50px;
   gap: 6px;
   cursor: pointer;
   text-decoration: none;
-  border: 1px solid rgba(226, 96, 45, 0.45);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
   transition: background .15s, border-color .15s, transform .15s, box-shadow .15s;
 }
 
 .pill-action svg {
   width: 16px;
   height: 16px;
-  color: #e2602d;
+  color: var(--accent);
 }
 
 .pill-action:hover {
-  background: rgba(226, 96, 45, 0.15);
-  border-color: #e2602d;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border-color: var(--accent);
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .pill-action-primary {
-  border-color: #e2602d;
+  border-color: var(--accent);
+}
+
+/* colour palette*/
+
+.dark,
+.cooking-overlay {
+  --bg: #1f1419;
+  --surface: #2a1b23;
+  --surface-sunk: #331f2a;
+  --border: #4a2e3b;
+  --border-strong: #6a4157;
+  --text: #fbeff3;
+  --text-muted: #c9a9b7;
+  --text-faint: #9c7d8b;
+
+  --accent: #ff7eb6;          /* hot pink */
+  --accent-strong: #ec5a9b;
+  --accent-text: #ff9cc9;     /* highlighted ingredients in the steps */
+  --accent-soft: #3f2030;
+  --accent-ink: #2a1019;      /* dark text on pink buttons, more readable than white */
+
+  --info: #ffb8a8;            /* soft peach, a warm second accent */
+
+  --ok: #8fd4a8;
+  --ok-soft: #1f2b24;
+  --danger: #ff6b5e;          /* leans coral-red so it stays distinct from the pink */
+  --danger-soft: #331a1a;
+  --danger-ink: #1f1419;
+
+  --disabled: #504048;
+  --inactive: #9a8590;
 }
